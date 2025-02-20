@@ -1,0 +1,44 @@
+.header {
+    min-height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 25px;
+    border-bottom: 1px solid var(--neutral-200\10);
+    padding-inline: 25px;
+    background-color: var(--base-100);
+    font-family: var(--font-family);
+}
+
+.headerButton {
+    appearance: none;
+    color: var(--accent);
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.headerDropdownContaier {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+}
+
+.listButton {
+    display: block;
+    padding-inline: 10px;
+    padding-block: 5px;
+    width: 100%;
+    background-color: var(--base-200);
+    border: none;
+
+    &:hover {
+        background-color: var(--base-300);
+    }
+}

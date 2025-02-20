@@ -1,0 +1,47 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  svg *[fill] {fill: currentColor}
+  svg *[stroke] {stroke: currentColor}
+}
+
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/InterRegular.ttf");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  :root {
+    --base-100: #F8F8F8;
+    --base-200: #F0F1F1;
+    --base-300: #E6E6E6;
+    --accent: #3C75B7;
+    --neutral-200: #000000;
+    --neutral-200\10: #0000001A;
+    --neutral-100: #302E2E;
+    --neutral-100\60: #302E2E99;
+
+    --border: 1px solid var(--neutral-200\10);
+    
+    --font-family: "Inter", "sans-serif";
+    --text-sm: 8px;
+    --text-base: 12px;
+  }
+
+  body {
+    font-family: var(--font-family);
+    font-size: var(--text-base);
+  }
+}
