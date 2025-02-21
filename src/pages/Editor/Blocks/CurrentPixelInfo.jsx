@@ -1,5 +1,5 @@
 import styles from "./CurrentPixel.module.css"
-import useCurrentPixelInfo from "@/hooks/useCurrentPixelInfo.jsx";
+import useCurrentPixelInfo from "@/hooks/useCurrentPixelInfo.js";
 
 function CurrentPixelInfo() {
   const currentPixelInfo = useCurrentPixelInfo()
