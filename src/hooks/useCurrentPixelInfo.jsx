@@ -24,7 +24,7 @@ function useCurrentPixelInfo() {
     }
   }, [canvas, context]);
 
-  return {currentPixelInfo}
+  return currentPixelInfo
 }
 
 export default useCurrentPixelInfo

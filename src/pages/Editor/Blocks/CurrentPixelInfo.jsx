@@ -2,7 +2,7 @@ import styles from "./CurrentPixel.module.css"
 import useCurrentPixelInfo from "@/hooks/useCurrentPixelInfo.jsx";
 
 function CurrentPixelInfo() {
-  const {currentPixelInfo} = useCurrentPixelInfo()
+  const currentPixelInfo = useCurrentPixelInfo()
 
   return (
     <div className={styles.container}>
