@@ -1,9 +1,14 @@
 import { create } from "zustand"
 
-const CanvasStore = create((set) => ({
+const useCanvas = create((set) => ({
     canvas: null,
     context: null,
-    cropImage: () => {
-        
-    }
+    setCanvas: (canvas) => set(() => ({
+        canvas: canvas
+    })),
+    setContext: (context) => set(() => ({
+        context: context,
+    }))
 }))
+
+export default useCanvas

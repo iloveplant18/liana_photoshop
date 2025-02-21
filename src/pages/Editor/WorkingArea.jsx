@@ -1,10 +1,21 @@
-import { useEffect } from "react"
+import {useEffect, useRef} from "react"
 import useImageStore from "@/stores/ImageStore.js"
 import { TransformComponent } from "react-zoom-pan-pinch"
 import styles from "./WorkingArea.module.css"
+import useCanvas from "@/stores/CanvasStore.js";
 
 function WorkingArea() {
     const image = useImageStore(state => state.image)
+    const canvasRef = useRef()
+    const {setCanvas, setContext} = useCanvas()
+
+    useEffect(() => {
+        if (!canvasRef.current) return
+        const context = canvasRef.current.getContext("2d")
+        if (!context) return;
+        setCanvas(canvasRef.current)
+        setContext(context)
+    }, [canvasRef, setCanvas, setContext]);
 
     useEffect(() => {
         if (!image) return
@@ -13,7 +24,7 @@ function WorkingArea() {
         canvas.width = image.width
         canvas.height = image.height
         context.drawImage(image, 0, 0, image.width, image.height)
-        
+
         const originalImage = document.querySelector("#original-image")
         originalImage.src = image.src
         return () => {
@@ -26,8 +37,8 @@ function WorkingArea() {
         <div className={styles.workingArea}>
             <TransformComponent wrapperClass={styles.workingArea}>
                 <div className={styles.imagesContainer}>
-                    <canvas id="canvas"></canvas>
-                    <img id="original-image" src="" alt="" />
+                    <canvas id="canvas" ref={canvasRef}></canvas>
+                    <img id="original-image" alt="" />
                 </div>
             </TransformComponent>
         </div>

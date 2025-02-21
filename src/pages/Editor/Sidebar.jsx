@@ -1,5 +1,6 @@
 import styles from "./Sidebar.module.css"
 import CropImage from "./Blocks/CropImage.jsx"
+import CurrentPixelInfo from "@/pages/Editor/Blocks/CurrentPixelInfo.jsx";
 
 function Sidebar() {
     return (
@@ -15,7 +16,7 @@ function Sidebar() {
                     
                 </li>
                 <li className={`${styles.sidebarBlock} ${styles.lastBlock}`}>
-                    
+                    <CurrentPixelInfo />
                 </li>
             </ul>
         </aside>
