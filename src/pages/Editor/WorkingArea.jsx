@@ -1,48 +1,50 @@
 import {useEffect, useRef} from "react"
 import useImageStore from "@/stores/ImageStore.js"
-import { TransformComponent } from "react-zoom-pan-pinch"
+import {TransformComponent} from "react-zoom-pan-pinch"
 import styles from "./WorkingArea.module.css"
 import useCanvas from "@/stores/CanvasStore.js";
+import Toolbar from "@/pages/Editor/Toolbar";
 
 function WorkingArea() {
-    const image = useImageStore(state => state.image)
-    const canvasRef = useRef()
-    const {setCanvas, setContext} = useCanvas()
+  const image = useImageStore(state => state.image)
+  const canvasRef = useRef()
+  const contextRef = useRef()
+  const {setCanvas, setContext} = useCanvas()
 
-    useEffect(() => {
-        if (!canvasRef.current) return
-        const context = canvasRef.current.getContext("2d")
-        if (!context) return;
-        setCanvas(canvasRef.current)
-        setContext(context)
-    }, [canvasRef, setCanvas, setContext]);
+  useEffect(() => {
+    contextRef.current = canvasRef.current.getContext("2d")
+  })
 
-    useEffect(() => {
-        if (!image) return
-        const canvas = document.querySelector("#canvas");
-        const context = canvas.getContext("2d")
-        canvas.width = image.width
-        canvas.height = image.height
-        context.drawImage(image, 0, 0, image.width, image.height)
+  useEffect(() => {
+    setCanvas(canvasRef.current)
+    setContext(contextRef.current)
+  }, [setCanvas, setContext]);
 
-        const originalImage = document.querySelector("#original-image")
-        originalImage.src = image.src
-        return () => {
-            context.clearRect(0, 0, image.width, image.height);
-            originalImage.src = ""
-        }
-    }, [image])
+  useEffect(() => {
+    if (!image) return
+    canvasRef.current.width = image.width
+    canvasRef.current.height = image.height
+    contextRef.current.drawImage(image, 0, 0, image.width, image.height)
 
-    return (
-        <div className={styles.workingArea}>
-            <TransformComponent wrapperClass={styles.workingArea}>
-                <div className={styles.imagesContainer}>
-                    <canvas id="canvas" ref={canvasRef}></canvas>
-                    <img id="original-image" alt="" />
-                </div>
-            </TransformComponent>
+    const originalImage = document.querySelector("#original-image")
+    originalImage.src = image.src
+    return () => {
+      contextRef.current.clearRect(0, 0, image.width, image.height);
+      originalImage.src = ""
+    }
+  }, [image])
+
+  return (
+    <div className={styles.workingArea}>
+      <TransformComponent>
+        <div className={styles.imagesContainer}>
+          <canvas id="canvas" ref={canvasRef}></canvas>
+          <img id="original-image" alt=""/>
         </div>
-    )
+      </TransformComponent>
+      <Toolbar />
+    </div>
+  )
 }
 
 export default WorkingArea

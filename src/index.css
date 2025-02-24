@@ -11,8 +11,13 @@
     list-style: none;
   }
 
-  svg *[fill] {fill: currentColor}
-  svg *[stroke] {stroke: currentColor}
+  svg *[fill] {
+    fill: currentColor
+  }
+
+  svg *[stroke] {
+    stroke: currentColor
+  }
 }
 
 @layer base {
@@ -34,7 +39,7 @@
     --neutral-100\60: #302E2E99;
 
     --border: 1px solid var(--neutral-200\10);
-    
+
     --font-family: "Inter", "sans-serif";
     --text-sm: 8px;
     --text-base: 12px;
