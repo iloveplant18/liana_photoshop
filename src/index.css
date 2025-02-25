@@ -43,10 +43,13 @@
     --font-family: "Inter", "sans-serif";
     --text-sm: 8px;
     --text-base: 12px;
+
+    --transition-duration: 200ms;
   }
 
   body {
     font-family: var(--font-family);
     font-size: var(--text-base);
+    overflow-x: hidden;
   }
 }

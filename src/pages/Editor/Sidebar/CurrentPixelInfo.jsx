@@ -7,7 +7,7 @@ function CurrentPixelInfo() {
   return (
     <div className={styles.container}>
       <span>x:&nbsp;{currentPixelInfo.x}</span>
-      <span>y:&nbsp;{currentPixelInfo.x}</span>
+      <span>y:&nbsp;{currentPixelInfo.y}</span>
       <span>color:&nbsp;RGB&nbsp;{currentPixelInfo.color?.red}&nbsp;{currentPixelInfo.color?.green}&nbsp;{currentPixelInfo.color?.blue}&nbsp;{currentPixelInfo.color?.alpha}</span>
     </div>
   );

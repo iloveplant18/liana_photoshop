@@ -2,9 +2,56 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  display: flex;
   padding-block: 5px;
-  padding-inline: 8px;
+  padding-inline: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
   border-radius: 10px;
   background: var(--base-100);
+}
+
+.toolbarButton {
+  width: 18px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 1px;
+  transition: all var(--transition-duration);
+
+  &:hover {
+    border-color: var(--neutral-200\10);
+  }
+
+  &:active {
+    background-color: var(--neutral-200\10);
+  }
+}
+
+.brightessLevelContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  justify-content: space-between;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  vertical-align: center;
+}
+
+.colorpickersContainer {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+}
+
+.colorpickerWrapper {
+  text-align: center;
+}
+
+.textCenter {
+  text-align: center;
 }

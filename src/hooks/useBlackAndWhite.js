@@ -1,5 +1,6 @@
 import useCanvas from "@/stores/CanvasStore.js";
 import {useEffect, useState} from "react";
+import calcBrightness from "@/utils/calcBrightness.js";
 
 function useBlackAndWhite() {
   const {canvas, context} = useCanvas()
@@ -15,7 +16,7 @@ function useBlackAndWhite() {
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height)
       let data = imageData.data
       for (let i = 0; i < data.length; i += 4) {
-        const brightness = 0.3 * data[i] + 0.59 * data[i + 1] + 0.11 * data[i + 2];
+        const brightness = calcBrightness(data[i], data[i + 1], data[i + 2]);
         data[i] = brightness
         data[i + 1] = brightness;
         data[i + 2] = brightness;
