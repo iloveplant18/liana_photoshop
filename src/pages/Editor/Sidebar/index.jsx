@@ -1,11 +1,13 @@
 import styles from "./Sidebar.module.css"
 import CurrentPixelInfo from "@/pages/Editor/Sidebar/CurrentPixelInfo.jsx";
+import ImageInfo from "@/pages/Editor/Sidebar/ImageInfo.jsx";
 
 function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <ul className={styles.sidebarInner}>
         <li className={styles.sidebarBlock}>
+          <ImageInfo />
         </li>
         <li className={styles.sidebarBlock}>
         </li>

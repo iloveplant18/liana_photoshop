@@ -8,6 +8,10 @@
   background-color: transparent;
 }
 
+.modal:not([open]) {
+  display: none;
+}
+
 .modalInner {
   position: absolute;
   max-width: 500px;

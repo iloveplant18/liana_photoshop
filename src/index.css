@@ -40,6 +40,8 @@
 
     --border: 1px solid var(--neutral-200\10);
 
+    --radius: 5px;
+
     --font-family: "Inter", "sans-serif";
     --text-sm: 8px;
     --text-base: 12px;

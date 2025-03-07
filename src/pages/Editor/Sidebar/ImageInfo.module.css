@@ -1,0 +1,28 @@
+.wrapper {
+  padding-bottom: 15px;
+  padding-inline: 25px;
+}
+
+.nameContainer {
+  background-color: var(--base-200);
+  border-radius: var(--radius);
+  min-height: 25px;
+  padding-block: 5px;
+  padding-inline: 25px;
+  min-width: 132px;
+  color: var(--accent);
+}
+
+.descriptionContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: var(--text-sm);
+  color: var(--neutral-100\60);
+}
+
+.textContainer {
+  display: flex;
+  column-gap: 25px;
+}

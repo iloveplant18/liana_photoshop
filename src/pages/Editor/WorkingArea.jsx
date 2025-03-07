@@ -36,13 +36,13 @@ function WorkingArea() {
 
   return (
     <div className={styles.workingArea}>
-      <TransformComponent>
+      <TransformComponent wrapperStyle={{height: '100%', width: "100%"}}>
         <div className={styles.imagesContainer}>
           <canvas id="canvas" ref={canvasRef}></canvas>
           <img id="original-image" alt=""/>
         </div>
       </TransformComponent>
-      <Toolbar />
+      <Toolbar/>
     </div>
   )
 }
