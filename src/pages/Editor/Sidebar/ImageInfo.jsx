@@ -1,5 +1,6 @@
 import style from "./ImageInfo.module.css"
 import useImageStore from "@/stores/ImageStore.js";
+import DownloadButton from "@/pages/Editor/Sidebar/DownloadButton.jsx";
 
 function ImageInfo() {
   const imageName = useImageStore(store => store.name);
@@ -8,8 +9,11 @@ function ImageInfo() {
 
   return (
     <div className={style.wrapper}>
-      <div className={style.nameContainer}>
-        {imageName ? imageName : "Название"}
+      <div className={style.topBlockContainer}>
+        <div className={style.nameContainer}>
+          {imageName ? imageName : "Название"}
+        </div>
+        <DownloadButton />
       </div>
       {imageName && imageSize && (
         <div className={style.descriptionContainer}>

@@ -1,0 +1,17 @@
+.progressBar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  column-gap: 12px;
+  color: var(--neutral-200\60);
+}
+
+.percent {
+  font-size: var(--text-sm);
+}
+
+.progressLine {
+  min-height: 15px;
+  width: 250px;
+  border: var(--border);
+}

@@ -1,0 +1,16 @@
+.button {
+  min-height: 25px;
+  padding-inline: 7.5px;
+  display: flex;
+  align-items: center;
+  background-color: var(--accent);
+  border-radius: var(--radius);
+  color: var(--base-100);
+  border: none;
+  transition: translate var(--transition-duration), box-shadow var(--transition-duration);
+
+  &:hover {
+    translate: 0 -3px;
+    box-shadow: 0 1px 4px 0px var(--neutral-100);
+  }
+}

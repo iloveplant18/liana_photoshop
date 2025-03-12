@@ -1,7 +1,8 @@
 import styles from "./Toolbar.module.css"
-import InvertImage from "@/pages/Editor/Toolbar/InvertImage.jsx";
+import InvertImage from "./InvertImage.jsx";
 import MakeImageBlackAndWhite from "./MakeImageBlackAndWhite.jsx";
-import ToBinary from "@/pages/Editor/Toolbar/ToBinary.jsx";
+import ToBinary from "./ToBinary.jsx";
+import ProgressBar from "./ProgressBar.jsx";
 
 function Toolbar() {
   return (
@@ -9,6 +10,7 @@ function Toolbar() {
       <InvertImage />
       <MakeImageBlackAndWhite />
       <ToBinary />
+      <ProgressBar />
     </div>
   );
 }

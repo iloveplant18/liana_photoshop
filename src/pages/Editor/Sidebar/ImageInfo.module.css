@@ -3,6 +3,11 @@
   padding-inline: 25px;
 }
 
+.topBlockContainer {
+  display: flex;
+  column-gap: 10px;
+}
+
 .nameContainer {
   background-color: var(--base-200);
   border-radius: var(--radius);
@@ -11,6 +16,9 @@
   padding-inline: 25px;
   min-width: 132px;
   color: var(--accent);
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .descriptionContainer {
