@@ -1,20 +1,20 @@
-import useCanvas from "@/stores/CanvasStore.js";
 import {useEffect, useState} from "react";
 import calcBrightness from "@/utils/calcBrightness.js";
 import {chunkSize} from "@/utils/consts.js";
 import useProgressStore from "@/stores/ProgressStore.js";
+import useImageStore from "@/stores/ImageStore.js";
 
 function useToBinary() {
-  const { context, canvas } = useCanvas();
   const [makeImageBinary, setMakeImageBinary] = useState(() => {})
   const setProgress = useProgressStore(store => store.setProgress)
+  const imageData = useImageStore(store => store.imageData)
+  const setImageData = useImageStore(store => store.setImageData);
 
   useEffect(() => {
-    if (!context) return
 
     const makeImageBinaryImplementation = (brightnessLevel, firstColor, secondColor) => {
-      const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-      const data = imageData.data;
+      if (!imageData) return
+      const data = structuredClone(imageData.data);
 
       let i = 0
       const percentInPixels = data.length / 100
@@ -41,7 +41,7 @@ function useToBinary() {
           requestIdleCallback(handleChunkOfPixels)
         } else {
           setProgress(0)
-          context.putImageData(imageData, 0, 0)
+          setImageData(new ImageData(data, imageData.width ,imageData.height))
         }
       }
 
@@ -49,7 +49,7 @@ function useToBinary() {
     }
 
     setMakeImageBinary(() => makeImageBinaryImplementation)
-  }, [context, canvas?.height, canvas?.width]);
+  }, [imageData, setImageData, setProgress]);
 
   return {makeImageBinary}
 }

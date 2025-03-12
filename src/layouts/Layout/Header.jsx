@@ -3,7 +3,7 @@ import Dropdown from "@/components/Dropdown.jsx"
 import useImageStore from "@/stores/ImageStore.js"
 
 function Header() {
-  const setImage = useImageStore(store => store.setImage)
+  const setImagePath = useImageStore(store => store.setImage)
   const setImageName = useImageStore(store => store.setImageName)
   const setImageExtension = useImageStore(store => store.setExtension)
   const setImageSize = useImageStore(store => store.setSize);
@@ -18,7 +18,7 @@ function Header() {
     const image = new Image()
     image.src = imagePath
     image.onload = () => {
-      setImage(image)
+      setImagePath(image)
       setImageSize({width: image.naturalWidth, height: image.naturalHeight});
     }
   }

@@ -1,22 +1,18 @@
-import useCanvas from "@/stores/CanvasStore.js";
 import {useEffect, useState} from "react";
 import useProgressStore from "@/stores/ProgressStore.js";
 import {chunkSize} from "@/utils/consts.js";
+import useImageStore from "@/stores/ImageStore.js";
 
 function useInvert() {
-  const {canvas, context} = useCanvas()
-  const [invertImage, setInvertImage] = useState()
-  const setProgress = useProgressStore(store => store.setProgress)
+  const [invertImage, setInvertImage] = useState();
+  const setProgress = useProgressStore(store => store.setProgress);
+  const imageData = useImageStore(store => store.imageData);
+  const setImageData = useImageStore(store => store.setImageData);
 
   useEffect(() => {
-    if (!(canvas && context)) {
-      setInvertImage(undefined)
-      return
-    }
-
+    if (!imageData) return
     const invertImageImplementation = () => {
-      const imageData = context.getImageData(0, 0, canvas.width, canvas.height)
-      let data = imageData.data
+      let data = structuredClone(imageData.data)
 
       let i = 0
       const percentInPixels = data.length / 100
@@ -34,7 +30,7 @@ function useInvert() {
           setProgress(percent)
           requestIdleCallback(handleChunkOfPixels)
         } else {
-          context.putImageData(imageData, 0, 0);
+          setImageData(new ImageData(data, imageData.width, imageData.height))
           setProgress(0);
         }
       }
@@ -42,7 +38,7 @@ function useInvert() {
       handleChunkOfPixels()
     }
     setInvertImage(() => invertImageImplementation)
-  }, [canvas, context])
+  }, [imageData, setImageData, setProgress])
 
   return {invertImage: invertImage}
 }

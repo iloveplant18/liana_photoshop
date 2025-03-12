@@ -1,23 +1,20 @@
-import useCanvas from "@/stores/CanvasStore.js";
 import {useEffect, useState} from "react";
 import calcBrightness from "@/utils/calcBrightness.js";
 import useProgressStore from "@/stores/ProgressStore.js";
 import {chunkSize} from "@/utils/consts.js";
+import useImageStore from "@/stores/ImageStore.js";
 
 function useBlackAndWhite() {
-  const {canvas, context} = useCanvas()
-  const [makeImageBlackAndWhite, setMakeImageBlackAndWhite] = useState()
-  const setProgress = useProgressStore(store => store.setProgress)
+  const imageData = useImageStore(store => store.imageData);
+  const setImageData = useImageStore(store => store.setImageData);
+  const [makeImageBlackAndWhite, setMakeImageBlackAndWhite] = useState();
+  const setProgress = useProgressStore(store => store.setProgress);
 
   useEffect(() => {
-    if (!(canvas && context)) {
-      setMakeImageBlackAndWhite(undefined)
-      return
-    }
-
     const blackAndWhiteImplementation = () => {
-      const imageData = context.getImageData(0, 0, canvas.width, canvas.height)
-      let data = imageData.data
+      if (!imageData) return
+
+      let data = structuredClone(imageData.data)
 
       let i = 0
       const percentInPixels = data.length / 100
@@ -37,14 +34,15 @@ function useBlackAndWhite() {
           requestIdleCallback(handleChunkOfPixels)
         } else {
           setProgress(0)
-          context.putImageData(imageData, 0, 0)
+          const newImageData = new ImageData(data, imageData.width, imageData.height)
+          setImageData(newImageData)
         }
       }
 
       handleChunkOfPixels()
     }
     setMakeImageBlackAndWhite(() => blackAndWhiteImplementation)
-  }, [canvas, context])
+  }, [imageData, setImageData, setProgress])
 
   return {makeImageBlackAndWhite}
 }

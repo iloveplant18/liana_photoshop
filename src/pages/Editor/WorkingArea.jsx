@@ -4,9 +4,12 @@ import {TransformComponent} from "react-zoom-pan-pinch"
 import styles from "./WorkingArea.module.css"
 import useCanvas from "@/stores/CanvasStore.js";
 import Toolbar from "@/pages/Editor/Toolbar";
+import useImageRedraw from "@/hooks/useImageRedraw.js";
+import useGlobalEventHandlers from "@/hooks/useGlobalEventHandlers.js";
 
 function WorkingArea() {
-  const image = useImageStore(state => state.image)
+  const image = useImageStore(store => store.image)
+  const setImageData = useImageStore(store => store.setImageData)
   const canvasRef = useRef()
   const contextRef = useRef()
   const {setCanvas, setContext} = useCanvas()
@@ -25,14 +28,20 @@ function WorkingArea() {
     canvasRef.current.width = image.width
     canvasRef.current.height = image.height
     contextRef.current.drawImage(image, 0, 0, image.width, image.height)
+    const initialImageData = contextRef.current.getImageData(0, 0, canvasRef.current.width, canvasRef.current.height)
+    setImageData(initialImageData)
 
     const originalImage = document.querySelector("#original-image")
     originalImage.src = image.src
+
     return () => {
       contextRef.current.clearRect(0, 0, image.width, image.height);
       originalImage.src = ""
     }
   }, [image])
+
+  useImageRedraw()
+  useGlobalEventHandlers();
 
   return (
     <div className={styles.workingArea}>
