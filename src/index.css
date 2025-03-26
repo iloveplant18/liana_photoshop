@@ -11,13 +11,14 @@
     list-style: none;
   }
 
-  svg *[fill] {
+  svg *[fill]:not([class*=rechart]) {
     fill: currentColor
   }
 
-  svg *[stroke] {
+  svg *[stroke]:not([class*=rechart]) {
     stroke: currentColor
   }
+
 }
 
 @layer base {

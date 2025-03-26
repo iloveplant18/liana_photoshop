@@ -3,6 +3,7 @@
   padding-top: 10px;
   border-right: var(--border);
   background-color: var(--base-100);
+  overflow-y: auto;
 }
 
 .sidebarInner {
