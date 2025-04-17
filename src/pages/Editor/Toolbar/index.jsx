@@ -3,6 +3,9 @@ import InvertImage from "./InvertImage.jsx";
 import MakeImageBlackAndWhite from "./MakeImageBlackAndWhite.jsx";
 import ToBinary from "./ToBinary.jsx";
 import ProgressBar from "./ProgressBar.jsx";
+import LinearNoiseReducer from "./LinearNoiseReducer.jsx";
+import MedianNoiseReducer from "./MedianNoiseReducer.jsx";
+import SaltPepper from "./SatlPepper.jsx";
 
 function Toolbar() {
   return (
@@ -10,6 +13,9 @@ function Toolbar() {
       <InvertImage />
       <MakeImageBlackAndWhite />
       <ToBinary />
+      <LinearNoiseReducer />
+      <MedianNoiseReducer />
+      <SaltPepper />
       <ProgressBar />
     </div>
   );

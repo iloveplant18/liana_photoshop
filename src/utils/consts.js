@@ -1,1 +1,1 @@
-export const chunkSize = 3000000;
+export const chunkSize = 3_000_000;
