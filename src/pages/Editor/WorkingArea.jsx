@@ -10,6 +10,7 @@ import useGlobalEventHandlers from "@/hooks/useGlobalEventHandlers.js";
 function WorkingArea() {
   const image = useImageStore(store => store.image)
   const setImageData = useImageStore(store => store.setImageData)
+  const setOriginalImageData = useImageStore(store => store.setOriginalImageData)
   const canvasRef = useRef()
   const contextRef = useRef()
   const {setCanvas, setContext} = useCanvas()
@@ -30,6 +31,7 @@ function WorkingArea() {
     contextRef.current.drawImage(image, 0, 0, image.width, image.height)
     const initialImageData = contextRef.current.getImageData(0, 0, canvasRef.current.width, canvasRef.current.height)
     setImageData(initialImageData)
+    setOriginalImageData(initialImageData); // только один раз
 
     const originalImage = document.querySelector("#original-image")
     originalImage.src = image.src

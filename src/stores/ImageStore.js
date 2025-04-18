@@ -16,6 +16,7 @@ const useImageStore = create((set) => ({
       return { imageData, prevStep }
     })
   },
+  setOriginalImageData: (data) => set({ originalImageData: data }),
   setImageName: (newImageName) => set({name: newImageName}),
   setExtension: (newExtension) => set({extension: newExtension}),
   setSize: (newSize) => set({size: newSize}),

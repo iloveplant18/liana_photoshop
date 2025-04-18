@@ -3,6 +3,7 @@ import InvertImage from "./InvertImage.jsx";
 import MakeImageBlackAndWhite from "./MakeImageBlackAndWhite.jsx";
 import ToBinary from "./ToBinary.jsx";
 import ProgressBar from "./ProgressBar.jsx";
+import ChangeOpacity from "./ChangeOpacity.jsx";
 
 function Toolbar() {
   return (
@@ -10,6 +11,7 @@ function Toolbar() {
       <InvertImage />
       <MakeImageBlackAndWhite />
       <ToBinary />
+        <ChangeOpacity />
       <ProgressBar />
     </div>
   );

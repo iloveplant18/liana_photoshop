@@ -6,7 +6,7 @@ import {TransformWrapper} from 'react-zoom-pan-pinch'
 function Editor() {
   return (
     <div className={styles.editor}>
-      <TransformWrapper centerOnInit={true} limitToBounds={false} minScale={0.05} initialScale={0.5}>
+      <TransformWrapper  limitToBounds={false} minScale={0.05} initialScale={0.35}>
         <Sidebar/>
         <WorkingArea/>
       </TransformWrapper>
