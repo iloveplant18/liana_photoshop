@@ -20,7 +20,14 @@ function ColorHistogram({stats, color, title}) {
       <header onClick={() => setIsShown(!isShown)}
               style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <span style={{fontSize: "var(--text-sm)"}}>{title}</span>
-        <button style={{width: "10px", height: '10px', color: "black", backgroundColor: "transparent", border: "none", shadow: "none"}}>
+        <button style={{
+          width: "10px",
+          height: '10px',
+          color: "black",
+          backgroundColor: "transparent",
+          border: "none",
+          shadow: "none"
+        }}>
           {isShown ? (
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

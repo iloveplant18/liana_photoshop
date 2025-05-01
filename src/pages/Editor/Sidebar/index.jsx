@@ -8,10 +8,10 @@ function Sidebar() {
     <aside className={styles.sidebar}>
       <ul className={styles.sidebarInner}>
         <li className={styles.sidebarBlock}>
-          <ImageInfo />
+          <ImageInfo/>
         </li>
         <li className={styles.sidebarBlock}>
-          <ColorHistogramsList />
+          <ColorHistogramsList/>
         </li>
         <li className={styles.sidebarBlock}>
         </li>

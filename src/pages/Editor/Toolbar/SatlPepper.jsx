@@ -30,9 +30,9 @@ function SaltPepper() {
         />
         {probability}
         <form method="dialog">
-            <button onClick={() => applySaltPepper?.()} disabled={!applySaltPepper}>
-              ОК
-            </button>
+          <button onClick={() => applySaltPepper?.()} disabled={!applySaltPepper}>
+            ОК
+          </button>
         </form>
       </div>
     </Modal>

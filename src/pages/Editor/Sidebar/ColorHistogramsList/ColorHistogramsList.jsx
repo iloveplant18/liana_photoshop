@@ -19,7 +19,7 @@ function ColorHistogramsList() {
     const blueStats = Array(256).fill(0);
     const brightnessStats = Array(256).fill(0);
 
-    const { data } = imageData;
+    const {data} = imageData;
     for (let i = 0; i < data.length; i += 4) {
       const r = data[i];
       const g = data[i + 1];
@@ -60,10 +60,10 @@ function ColorHistogramsList() {
 
   return (
     <div className={style.container}>
-      <ColorHistogram title="Частоты красного спектра" stats={stats?.redStats} color="red" />
-      <ColorHistogram title="Частоты зеленого спектра" stats={stats?.redStats} color="green" />
-      <ColorHistogram title="Частоты синего спектра" stats={stats?.redStats} color="blue" />
-      <ColorHistogram title="Яркость" stats={stats?.redStats} color="purple" />
+      <ColorHistogram title="Частоты красного спектра" stats={stats?.redStats} color="red"/>
+      <ColorHistogram title="Частоты зеленого спектра" stats={stats?.redStats} color="green"/>
+      <ColorHistogram title="Частоты синего спектра" stats={stats?.redStats} color="blue"/>
+      <ColorHistogram title="Яркость" stats={stats?.redStats} color="purple"/>
     </div>
   );
 }

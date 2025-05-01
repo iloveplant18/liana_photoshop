@@ -48,7 +48,8 @@ function ToBinary() {
           {brightnessLevel}
         </span>
       </div>
-      <p className={styles.textCenter}>Все пикесли с ярокстью ниже указанной будут первого цвета, остальные - второго</p>
+      <p className={styles.textCenter}>Все пикесли с ярокстью ниже указанной будут первого цвета, остальные -
+        второго</p>
       <ul className={styles.colorpickersContainer}>
         <li className={styles.colorpickerWrapper}>
           <RgbColorPicker color={firstColor} onChange={setFirstColor}/>
