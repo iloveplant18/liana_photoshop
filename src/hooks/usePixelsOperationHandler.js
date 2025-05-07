@@ -13,6 +13,7 @@ function usePixelsOperationHandler(pixelsHandlingFunction, config) {
   useEffect(() => {
     if (!imageData) return
     const decoratedFunctionImplementation = () => {
+      const originalData = structuredClone(imageData.data);
       let data = structuredClone(imageData.data)
 
       let i = 0
@@ -21,7 +22,7 @@ function usePixelsOperationHandler(pixelsHandlingFunction, config) {
       function handleChunkOfPixels() {
         const end = Math.min(data.length, i + chunkSize)
         for (; i < end; i += 4) {
-          pixelsHandlingFunction(data, i);
+          pixelsHandlingFunction(data, i, originalData);
         }
 
         if (i < data.length) {

@@ -7,6 +7,8 @@ import LinearNoiseReducer from "./LinearNoiseReducer.jsx";
 import MedianNoiseReducer from "./MedianNoiseReducer.jsx";
 import SaltPepper from "./SatlPepper.jsx";
 import LaplasMethod from "@/pages/Editor/Toolbar/LaplasMethod.jsx";
+import KirshMethod from "@/pages/Editor/Toolbar/KirshMethod.jsx";
+import WollesMethod from "@/pages/Editor/Toolbar/WollesMethod.jsx";
 
 function Toolbar() {
   return (
@@ -18,6 +20,8 @@ function Toolbar() {
       <MedianNoiseReducer/>
       <SaltPepper/>
       <LaplasMethod/>
+      <KirshMethod />
+      <WollesMethod />
       <ProgressBar/>
     </div>
   );
