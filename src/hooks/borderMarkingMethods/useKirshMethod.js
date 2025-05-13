@@ -28,6 +28,8 @@ export default function useKirshMethod() {
       return maxF;
     }, 0) - brightnessReduce;
     updatePixelByNewBrightness(i, finalBrightness, data);
+  }, {
+    chunkSize: 10_000,
   });
 
   return applyKirshMethod;

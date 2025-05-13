@@ -9,6 +9,7 @@ import SaltPepper from "./SatlPepper.jsx";
 import LaplasMethod from "@/pages/Editor/Toolbar/LaplasMethod.jsx";
 import KirshMethod from "@/pages/Editor/Toolbar/KirshMethod.jsx";
 import WollesMethod from "@/pages/Editor/Toolbar/WollesMethod.jsx";
+import StaticMethod from "@/pages/Editor/Toolbar/StaticMethod.jsx";
 
 function Toolbar() {
   return (
@@ -22,6 +23,7 @@ function Toolbar() {
       <LaplasMethod/>
       <KirshMethod />
       <WollesMethod />
+      <StaticMethod />
       <ProgressBar/>
     </div>
   );

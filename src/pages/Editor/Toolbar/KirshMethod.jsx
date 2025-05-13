@@ -1,5 +1,5 @@
 import style from "@/pages/Editor/Toolbar/Toolbar.module.css";
-import useKirshMethod from "@/hooks/useKirshMethod.js";
+import useKirshMethod from "@/hooks/borderMarkingMethods/useKirshMethod.js";
 
 export default function KirshMethod() {
   const applyKirshMethod = useKirshMethod();

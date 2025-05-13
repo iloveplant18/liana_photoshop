@@ -1,5 +1,5 @@
 import style from "@/pages/Editor/Toolbar/Toolbar.module.css";
-import useLaplasMethod from "@/hooks/useLaplasMethod.js";
+import useLaplasMethod from "@/hooks/borderMarkingMethods/useLaplasMethod.js";
 
 export default function LaplasMethod() {
   const applyLaplasMethod = useLaplasMethod();
