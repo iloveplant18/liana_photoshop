@@ -26,6 +26,7 @@ function useMedianNoiseReducer() {
 function findBrightnessMedian(data, pixelsIndexes) {
     const brightnesses = calcBrightnessesByPixelsIndexes(data, pixelsIndexes).sort((a, b) => a - b);
     if (brightnesses.length === 0) return 0;
+    console.log(brightnesses);
     return brightnesses[Math.floor(brightnesses.length / 2)];
 }
 
