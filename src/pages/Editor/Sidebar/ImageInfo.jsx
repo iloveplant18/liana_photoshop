@@ -13,7 +13,7 @@ function ImageInfo() {
         <div className={style.nameContainer}>
           {imageName ? imageName : "Название"}
         </div>
-        <DownloadButton />
+        <DownloadButton/>
       </div>
       {imageName && imageSize && (
         <div className={style.descriptionContainer}>

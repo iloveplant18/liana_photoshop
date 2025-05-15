@@ -5,7 +5,8 @@ function ProgressBar() {
   const progress = useProgressStore(store => store.progress);
   return (
     <div className={style.progressBar}>
-      <div className={style.progressLine} style={{ backgroundImage: `linear-gradient(90deg, var(--neutral-100) ${progress}%, transparent ${progress}%)` }}></div>
+      <div className={style.progressLine}
+           style={{backgroundImage: `linear-gradient(90deg, var(--neutral-100) ${progress}%, transparent ${progress}%)`}}></div>
       <span className={style.percent}>
         {progress}%
       </span>
