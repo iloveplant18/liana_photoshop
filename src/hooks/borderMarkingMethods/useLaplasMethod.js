@@ -1,7 +1,7 @@
 import usePixelsOperationHandler from "@/hooks/usePixelsOperationHandler.js";
 import calcIndexesOfPixelsInSquare from "@/utils/calcIndexesOfPixelsInSquare.js";
 import useImageStore from "@/stores/ImageStore.js";
-import calcBrightnessesByPixelsIndexes from "@/utils/calcBrightnessesByPIxelsIndexes.js";
+import calcBrightnessesByPixelsIndexes from "@/utils/calcBrightnessesByPixelsIndexes.js";
 import updatePixelByNewBrightness from "@/utils/updatePixelByNewBrightness.js";
 
 export default function useLaplasMethod() {

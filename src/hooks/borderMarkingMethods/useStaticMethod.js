@@ -1,7 +1,7 @@
 import useImageStore from "@/stores/ImageStore.js";
 import usePixelsOperationHandler from "@/hooks/usePixelsOperationHandler.js";
 import calcIndexesOfPixelsInSquare from "@/utils/calcIndexesOfPixelsInSquare.js";
-import calcBrightnessesByPixelsIndexes from "@/utils/calcBrightnessesByPIxelsIndexes.js";
+import calcBrightnessesByPixelsIndexes from "@/utils/calcBrightnessesByPixelsIndexes.js";
 import updatePixelByNewBrightness from "@/utils/updatePixelByNewBrightness.js";
 import calcBrightness from "@/utils/calcBrightness.js";
 

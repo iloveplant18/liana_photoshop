@@ -2,7 +2,7 @@ import useImageStorage from "@/stores/ImageStore.js";
 import usePixelsOperationHandler from "@/hooks/usePixelsOperationHandler.js";
 import calcIndexesOfPixelsInSquare from "@/utils/calcIndexesOfPixelsInSquare.js";
 import sortByCircleOrder from "@/utils/sortByCircleOrder.js";
-import calcBrightnessesByPixelsIndexes from "@/utils/calcBrightnessesByPIxelsIndexes.js";
+import calcBrightnessesByPixelsIndexes from "@/utils/calcBrightnessesByPixelsIndexes.js";
 import updatePixelByNewBrightness from "@/utils/updatePixelByNewBrightness.js";
 
 export default function useWollesMethod() {
