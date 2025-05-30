@@ -13,8 +13,8 @@
 }
 
 .toolbarButton {
-  width: 18px;
-  aspect-ratio: 1;
+  width: fit-content;
+  height: 20px;
   background-color: transparent;
   border-width: 1px;
   border-style: solid;
